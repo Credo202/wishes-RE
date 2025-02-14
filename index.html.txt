@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeuse Saint-Valentin❤️</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4d6d;
+            font-size: 3em;
+            margin-top: 20vh;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 2em;
+            animation: fall 3s linear infinite;
+            z-index: 10; /* Ajouté */
+        }
+        @keyframes fall {
+            from { transform: translateY(-100px); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>💕 Joyeuse Saint-Valentin, RENAUDE ! 💕</h1>
+
+<audio id="valentineAudio" loop>
+    <source src="Dadju  Tayc  I love you Clip officiel.mp3" type="audio/mp3">
+</audio>
+<button onclick="document.getElementById('valentineAudio').play()" style="margin-top: 20px; padding: 10px 20px; font-size: 1.2em; background-color: #ff4d6d; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Démarrer la musique
+</button>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("heart");
+        document.body.appendChild(heart);
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        setTimeout(() => heart.remove(), 3000);
+    }
+    setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
